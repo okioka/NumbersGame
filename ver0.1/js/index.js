@@ -13,9 +13,22 @@ if (ansFrg = true) {
 
 function che() {
 
-    count = count - 1;
+    var chk = new RegExp(/^([1-9]\d*|0)$/);
+
+    if(!chk.test(document.getElementById("ans").value)) {
+        alert("1から100の数字を入力してください。");
+        return false;
+    }
+
+    if(Number(document.getElementById("ans").value) < 1 ||
+       Number(document.getElementById("ans").value) > 100) {
+        alert("1から100の数字を入力してください。");
+        return false;
+    }
 
     var ans = Number(document.getElementById("ans").value);
+
+    count = count - 1;
 
 　　if (rig === ans) {
 
