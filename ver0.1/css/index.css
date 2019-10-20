@@ -1,5 +1,84 @@
-h1 {
-  padding: .5em .75em;
-  background-color: #ccc;
-  border-left: 30px solid #32cd32;
+/* デフォルトのフォント */
+* {
+  font-family: "游ゴシック", "Yu Gothic"; 
 }
+
+
+/* 背景のグラデーション */
+.back {
+  background: radial-gradient(#00A3AF, #00B064);
+}
+
+/* ボックス要素の背景設定 */
+.in_back {
+  background-color: #FCFCFC;
+  border-radius: 0.4rem;
+  overflow: hidden;	
+}
+
+.in_back.logo_area {
+  padding: 10px 30px 10px;
+}
+
+.in_back.main {
+  margin-top: 20px;
+  margin-left : auto; 
+  margin-right : auto;
+  height: 470px;
+  width: 60%;
+  text-align: center; 
+}
+
+.line100 {
+  line-height: 100px;
+}
+
+/* キャプション用に文字サイズを設定 */
+.line100.caption{
+  font-size: 1.7em;
+  width: 400px;
+  text-align: center;
+  font-weight: 600; 
+}
+
+.txt {
+  text-align: center; 
+  width: 300px;
+}
+
+/* ボタンのデザイン */
+.btn {
+  margin: auto;
+  padding: 0.5em 1.5em;
+  color: #000000;
+  background: #FFFFFF;
+  border: solid 2px #000000;
+  border-radius: 3px;
+  transition: 0.4s;
+  font-size: 1.2em;
+}
+
+/* ボタンにカーソルが乗ったら見た目を変える */
+.btn:hover {
+  background: #00A3AF;
+  color: #FFFFFF;
+  border: solid 2px #00A3AF;
+}
+
+
+/* placeholder要素の文字色を設定 
+   共通の指定方法が無いためブラウザごとに記述する */
+
+/* WebKit, Blink, Edge */
+::-webkit-input-placeholder { 
+  color:#555555;
+}
+/* Internet Explorer 10-11 */
+:-ms-input-placeholder { 
+  color:#555555;
+}
+/* その他 */
+::placeholder{ 
+  color:#555555;
+}
+
