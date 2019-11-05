@@ -4,6 +4,7 @@ var count = 10;
 
 var ansFrg = true;
 
+// 回答前なら答えを生成
 if (ansFrg = true) {
 
     var rig = Math.floor(Math.random() * (max + 1 - min)) + min;
@@ -11,17 +12,20 @@ if (ansFrg = true) {
 
 }
 
+
 function che() {
 
     var chk = new RegExp(/^([1-9]\d*|0)$/);
 
+    // 数かどうか入力値チェック
     if(!chk.test(document.getElementById("ans").value)) {
         alert("1から100の数字を入力してください。");
         return false;
     }
 
-    if(Number(document.getElementById("ans").value) < 1 ||
-       Number(document.getElementById("ans").value) > 100) {
+    //適切な範囲内か入力値チェック
+    if(Number(document.getElementById("ans").value) < min ||
+       Number(document.getElementById("ans").value) > max) {
         alert("1から100の数字を入力してください。");
         return false;
     }
@@ -30,6 +34,7 @@ function che() {
 
     count = count - 1;
 
+    // 回答チェック
 　　if (rig === ans) {
 
         document.getElementById("res").innerHTML = "おめでとうございます！正解です！";
@@ -49,22 +54,22 @@ function che() {
 
 　　}
 
-    if (ansFrg === false) {
+   if (ansFrg === false) {
 
-        if (count === 0) {
+       if (count === 0) {
 
-            document.getElementById("res").innerHTML = "残念。ゲームオーバーです。"
-            document.getElementById("cou").innerHTML = "正解は" + rig + "でした。";
-            document.getElementById("ansButton").style.display="none";
+           document.getElementById("res").innerHTML = "残念。ゲームオーバーです。"
+           document.getElementById("cou").innerHTML = "正解は" + rig + "でした。";
+           document.getElementById("ansButton").style.display="none";
 
-        } else {
+       } else {
 
-            document.getElementById("cou").innerHTML = "あと" + count + "回間違えるとゲームオーバーです。";
-            document.getElementById("ans").focus();
+           document.getElementById("cou").innerHTML = "あと" + count + "回間違えるとゲームオーバーです。";
+           document.getElementById("ans").focus();
 
-        }
+       }
 
-    }
+   }
 
 } 
 
